@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'home',
+    'book_shop',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,8 @@ ROOT_URLCONF = 'megadodo_publications.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates') 
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
