@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Contrail+One&family=Nabla&display=swap');
+
+body {
+    font-family: 'Cantarell', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+navbar {
+    background-color: #343a40;
+}
+
+.home-container {
+    color: #000000;
+}
+
+.home-title {
+    font-family: 'nabla', serif;
+    font-size: 3rem;
+}

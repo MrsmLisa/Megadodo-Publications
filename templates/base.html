@@ -58,7 +58,10 @@
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </form>
-      <li class="nav-item dropdown">
+    </div>
+  </div>
+  <div>
+          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-circle-user"></i>
           </a>
@@ -86,13 +89,11 @@
                 {% endif %}
             </p>
           </a>
-    </div>
   </div>
 </nav>
     </header>
 
 
-    <h1>Hello, world!</h1>
 
     {% if messages %}
       <div class="alert alert-info" role="alert">
@@ -111,6 +112,11 @@
 
     {% block post_load_js %}
     {% endblock post_load_js %}
+
+    <main>
+        {% block main %}
+        {% endblock main %}
+    </main>
 
 
     </body>
