@@ -32,66 +32,72 @@
      <title>Megadodo Publications {% block extra_title %} {% endblock extra_title %} </title>
 </head>
   <body>
-    <header>
-    <!-- Navbar (from Bootstrap)-->
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Megadodo <br> Publications</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-        </li>
-       <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Contact</a>
-        </li> 
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </form>
-    </div>
-  </div>
-  <div>
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-circle-user"></i>
-          </a>
-          <ul class="dropdown-menu">
-            {% if request.user.is_authenticated %}
-              <li><a class="dropdown-item" href="#">My Account</a></li> 
-              <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-            {% if request.user.is.superuser %}
-              <li><a class="dropdown-item" href="#">Admin</a></li>
-            {% endif %}
-            {% else %}
-            <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a></li>
-            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
-            <li><hr class="dropdown-divider"></li>
-            {% endif %}
-          </ul>
-        </li>
-          <a class="shopping-cart-link" href="#" role="button" aria-expanded="false">
-            <i class="fa-solid fa-basket-shopping"></i>
-            <p class="cart-count">
-                {% if grand_total %}
-                    €{{ grand_total|floatformat:2 }}
-                {% else %}
-                    €0.00
-                {% endif %}
-            </p>
-          </a>
-  </div>
-</nav>
-    </header>
+<header>
+    <!-- navbar from Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Megadodo <br> Publications</a>
+            <div class="d-flex align-items-center ms-auto gap-3 order-lg-last">
+                <!-- User dropdown -->
+                <li class="nav-item dropdown list-unstyled">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-circle-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        {% if request.user.is_authenticated %}
+                            <li><a class="dropdown-item" href="#">My Account</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                            {% if request.user.is_superuser %}
+                                <li><a class="dropdown-item" href="#">Admin</a></li>
+                            {% endif %}
+                        {% else %}
+                            <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+
+                <!-- Shopping cart -->
+                <a class="shopping-cart-link nav-link" href="#" role="button">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-count">
+                        {% if grand_total %}
+                            €{{ grand_total|floatformat:2 }}
+                        {% else %}
+                            €0.00
+                        {% endif %}
+                    </span>
+                </a>
+            </div>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <button class="btn" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
 
 
 

@@ -7,15 +7,27 @@ body {
     color: #333;
 }
 
-navbar {
-    background-color: #343a40;
+header {
+    background-color: black !important;
 }
 
-.home-container {
-    color: #000000;
+.index-hero {
+    background-color: #000000;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
 .home-title {
     font-family: 'nabla', serif;
     font-size: 3rem;
+}
+
+@media (max-width: 400px) {
+    .navbar-brand {
+        display: none;
+    }
 }

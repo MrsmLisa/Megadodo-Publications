@@ -7,8 +7,12 @@ body {
     color: #333;
 }
 
-navbar {
+.navbar {
     background-color: #343a40;
+}
+
+.home-container {
+    color: #000000;
 }
 
 .home-title {
