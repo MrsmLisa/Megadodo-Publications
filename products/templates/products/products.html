@@ -1,0 +1,31 @@
+{% block content %}
+{% load static %}
+
+<!-- Book List -->
+ <!-- Bootstrap Card -->
+<div class="container" style="max-width: 1024px;">
+    <div class="row justify-content-center">
+        {% for book in books %}
+        <div class="card" style="width: 18rem;">
+            <!-- Made the whole card clickable -->
+            <a href="{{ book.product_url }}" style="cursor:pointer;" class="text-decoration-none text-dark">
+                {% if "placeholder" in book.image_url %}
+                    <img src="{% static 'images/placeholder.png' %}" class="card-img-top" alt="Placeholder Image">
+                {% else %}
+                    <img src="{{ book.image_url }}" class="card-img-top" alt="{{ book.title }}">
+                {% endif %}
+                <img src="..." class="card-img-top" alt="...">
+            </a>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title h4">{{ book.title }}</h2>
+                <h3 class="card-subtitle mb-2 text-muted h5">{{ book.author }}</h3>
+                <p class="card-text">{{ book.description }}</p>
+                <p class="card-text">Price: ${{ book.price }}</p>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
