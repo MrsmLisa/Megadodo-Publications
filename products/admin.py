@@ -4,8 +4,8 @@ from .models import Product, Category
 # Register your models here.
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'price', 'category', 'sku')
-    search_fields = ('title', 'author', 'category', 'sku')
+    list_display = ('name', 'author', 'price', 'category', 'sku')
+    search_fields = ('name', 'author', 'category', 'sku')
     list_filter = ('category',)
 
 class CategoryAdmin(admin.ModelAdmin):

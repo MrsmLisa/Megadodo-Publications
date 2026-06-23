@@ -1,34 +1,31 @@
-{% block content %}
 {% load static %}
+{% block content %}
 
-<!-- Book List -->
- <!-- Bootstrap Card -->
 <div class="container" style="max-width: 1024px;">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center g-4">
         {% for product in products %}
-        <div class="card" style="width: 18rem;">
-            <!-- Made the whole card clickable -->
-            <a href="{{ product.product_url }}" style="cursor:pointer;" class="text-decoration-none text-dark">
-                {% if product.cover_image %}
-                    <img src="{{ product.cover_image.url }}" class="card-img-top" alt="{{ product.title }}">
-                {% else %}
-                    <img src="{{ MEDIA_URL }}no_image.png" class="card-img-top" alt="{{ product.title }}">
-                {% endif %}
-                <img src="..." class="card-img-top" alt="...">
-            </a>
-            <div class="col-md-8">
-            <div class="card-body">
-                <h2 class="card-title h4">{{ product.name }}</h2>
-                {% if product.author %}
-                    <h3 class="card-subtitle mb-2 text-muted h5">{{ product.author }}</h3>
-                {% endif %}
-                <h3 class="card-subtitle mb-2 text-muted h5">{{ product.category.name  }}</h3>
-                <p class="card-text">{{ product.description }}</p>
-                <p class="card-text">Price: €{{ product.price }}</p>
-            </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100">
+                <a href="{{ product.product_url }}" class="text-decoration-none text-dark">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{% static 'images/no_image.png' %}" class="card-img-top" alt="{{ product.name }}">
+                    {% endif %}
+                </a>
+                <div class="card-body">
+                    <h2 class="card-title h4">{{ product.name }}</h2>
+                    {% if product.author %}
+                        <h3 class="card-subtitle mb-2 text-muted h5">{{ product.author }}</h3>
+                    {% endif %}
+                    <h3 class="card-subtitle mb-2 text-muted h5">{{ product.category.name }}</h3>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">€{{ product.price }}</p>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
+
 {% endblock content %}
