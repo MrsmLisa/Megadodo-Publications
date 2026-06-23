@@ -9,10 +9,10 @@
         <div class="card" style="width: 18rem;">
             <!-- Made the whole card clickable -->
             <a href="{{ book.product_url }}" style="cursor:pointer;" class="text-decoration-none text-dark">
-                {% if "placeholder" in book.image_url %}
-                    <img src="{% static 'images/placeholder.png' %}" class="card-img-top" alt="Placeholder Image">
+                {% if book.cover_image %}
+                    <img src="{{ book.cover_image.url }}" class="card-img-top" alt="{{ book.title }}">
                 {% else %}
-                    <img src="{{ book.image_url }}" class="card-img-top" alt="{{ book.title }}">
+                    <img src="{{ MEDIA_URL }}no_image.png" class="card-img-top" alt="{{ book.title }}">
                 {% endif %}
                 <img src="..." class="card-img-top" alt="...">
             </a>
