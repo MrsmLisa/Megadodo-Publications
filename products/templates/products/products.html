@@ -5,23 +5,26 @@
  <!-- Bootstrap Card -->
 <div class="container" style="max-width: 1024px;">
     <div class="row justify-content-center">
-        {% for book in books %}
+        {% for product in products %}
         <div class="card" style="width: 18rem;">
             <!-- Made the whole card clickable -->
-            <a href="{{ book.product_url }}" style="cursor:pointer;" class="text-decoration-none text-dark">
-                {% if book.cover_image %}
-                    <img src="{{ book.cover_image.url }}" class="card-img-top" alt="{{ book.title }}">
+            <a href="{{ product.product_url }}" style="cursor:pointer;" class="text-decoration-none text-dark">
+                {% if product.cover_image %}
+                    <img src="{{ product.cover_image.url }}" class="card-img-top" alt="{{ product.title }}">
                 {% else %}
-                    <img src="{{ MEDIA_URL }}no_image.png" class="card-img-top" alt="{{ book.title }}">
+                    <img src="{{ MEDIA_URL }}no_image.png" class="card-img-top" alt="{{ product.title }}">
                 {% endif %}
                 <img src="..." class="card-img-top" alt="...">
             </a>
             <div class="col-md-8">
             <div class="card-body">
-                <h2 class="card-title h4">{{ book.title }}</h2>
-                <h3 class="card-subtitle mb-2 text-muted h5">{{ book.author }}</h3>
-                <p class="card-text">{{ book.description }}</p>
-                <p class="card-text">Price: ${{ book.price }}</p>
+                <h2 class="card-title h4">{{ product.name }}</h2>
+                {% if product.author %}
+                    <h3 class="card-subtitle mb-2 text-muted h5">{{ product.author }}</h3>
+                {% endif %}
+                <h3 class="card-subtitle mb-2 text-muted h5">{{ product.category.name  }}</h3>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text">Price: €{{ product.price }}</p>
             </div>
             </div>
         </div>
