@@ -13,25 +13,46 @@ body {
     margin: 0;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding-top: 80px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Contrail One', serif;
 }
 
 header {
-    background-color: black !important;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 0;
+    background-color: black;
+    z-index: 1000;
+}
+
+.navbar-toggler {
+    border: none;
+    color: white;
+}
+
+.fa-solid, .cart-count {
+    color: white;
+    margin: 4px;
+}
+
+main {
+    padding-top: 90px;
 }
 
 .index-hero {
-    background-color: #000000;
-    max-height: 400px;
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color:black;
 }
 
 .home-title {
-    font-family: 'nabla', serif;
+    font-family: 'Contrail One', serif;
     font-size: 3rem;
 }
 

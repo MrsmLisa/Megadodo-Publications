@@ -1,15 +1,12 @@
-{% extends 'base.html' %} {% block content %}
-<container class="index-hero">
-  <div class="row">
-    <div
-      class="col-12 home-content d-flex flex-column align-items-center justify-content-center"
-    >
-      <p>Megadodo Publications presents</p>
-      <h1 class="home-title text-center">
-        The hitchhiker's guide <br />to the galaxy
-      </h1>
-    </div>
-  </div>
-</container>
+{% extends 'base.html' %}
+{% load static %}
 
+{% block content %}
+<div class="container index-hero">
+    <div class="row">
+        <div class="col-12 home-content d-flex flex-column align-items-center justify-content-center">
+        <img src="{% static 'images/hero.webp' %}" alt="Hitchhiker's Guide" class="img-fluid w-100">        
+        </div>
+    </div>
+</div>
 {% endblock content %}
