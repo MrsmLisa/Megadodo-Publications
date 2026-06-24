@@ -31,7 +31,7 @@
   
      <title>Megadodo Publications {% block extra_title %} {% endblock extra_title %} </title>
 </head>
-  <body>
+<body>
 <header>
     <!-- navbar from Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -112,9 +112,12 @@
     {% block page_header %}
     {% endblock page_header %}
 
+    <main class="pt-3">
 
     {% block content %}
     {% endblock content %}
+
+    </main>
 
     {% block post_load_js %}
     {% endblock post_load_js %}

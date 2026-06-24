@@ -1,11 +1,13 @@
+{% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
 
-<div class="container" style="max-width: 1024px;">
+<div class="container mt-3">
     <div class="row justify-content-center g-4">
         {% for product in products %}
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
+        <div class="col-12 col-md-5 col-lg-4">
+            <div class="card">
                 <a href="{{ product.product_url }}" class="text-decoration-none text-dark">
                     {% if product.image %}
                         <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
@@ -19,7 +21,6 @@
                         <h3 class="card-subtitle mb-2 text-muted h5">{{ product.author }}</h3>
                     {% endif %}
                     <h3 class="card-subtitle mb-2 text-muted h5">{{ product.category.name }}</h3>
-                    <p class="card-text">{{ product.description }}</p>
                     <p class="card-text">€{{ product.price }}</p>
                 </div>
             </div>

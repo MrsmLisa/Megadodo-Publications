@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center m3">
+    <div class="col-10 col-md-8">
+    <a href="{{ product.product_url }}" class="text-decoration-none text-dark">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+        {% else %}
+            <img src="{% static 'images/no_image.png' %}" class="card-img-top" alt="{{ product.name }}">
+        {% endif %}
+    </a>
+    <div class="col-12 pt-2">   
+    <h1>{{ product.name }}</h1>
+    {% if product.author %}
+    <p>By {{ product.author }}</p>
+    {% endif %}
+    <h2>€ {{ product.price }}</h2>
+    <p>{{ product.description }}</p>
+    </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}
