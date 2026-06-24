@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 from django.views.generic import ListView
 
@@ -17,3 +17,7 @@ class ProductListView(ListView):
         if category:
             queryset = queryset.filter(category=category)
         return queryset
+    
+    def product_detail(request, pk):
+        product = get_object_or_404(Product, pk=pk)
+        return render(request, 'products/product_detail.html', {'product' : product})
