@@ -17,7 +17,7 @@
     <p>By {{ product.author }}</p>
     {% endif %}
     <h2>€ {{ product.price }}</h2>
-    <p>{{ product.description }}</p>
+    <p>{{ product.description|safe }}</p>
     </div>
     </div>
     </div>
