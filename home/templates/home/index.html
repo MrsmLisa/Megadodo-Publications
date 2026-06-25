@@ -3,33 +3,35 @@
 
 {% block content %}
 <!--Cards from Bootstrap-->
-<div class="container">
-    <div class="row col-12 col-md-5">
-        <div class="card">
-            <div class="card-body">
-            <div class=" home-content d-flex flex-column align-items-center justify-content-center">
-                <img src="{% static 'images/hero.webp' %}" alt="Hitchhiker's Guide" class="img-fluid w-100">        
-            </div>
-            <h1 class="h2">The Hitchhiker's Guide to the Galaxy</h1>
-            <p><em>The universe is big. Really big. You just won't believe how vastly, hugely, mind-bogglingly big it is.</em></p>
-            <p>Don't face it unprepared. The Hitchhiker's Guide to the Galaxy is the indispensable companion for anyone who finds themselves unexpectedly adrift in an infinite and largely baffling universe.</p>
-            <p><strong>Now available in a handsome physical edition from Megadodo Publications.
-            </strong></p>
-            </div>
-            </div>
+<div class="container mt-4">
+    <div class="row justify-content-center g-4">
 
-        <div class="card">
-            <div class="card-body">
-            <div class=" home-content d-flex flex-column align-items-center justify-content-center">
-                <img src="{% static 'images/hero2.webp' %}" alt="Hitchhiker's Guide" class="img-fluid w-100">        
-            </div>
-            <h1 class="h2">53 More Things To Do in Zero Gravity</h1>
-            <p><em>Bored of just floating? So were we.</em></p>
-            <p>The follow-up nobody asked for but everybody needed. 53 More Things To Do in Zero Gravity is packed with practical activities, ill-advised experiments and one chapter the publishers strongly recommend skipping entirely.</p>
-            <p><strong>Perfect for the seasoned hitchhiker with time on their hands.
-            </strong></p>
+        <!-- Card one -->
+        <div class="col-12 col-md-5">
+            <div class="card h-100">
+                <img src="{% static 'images/hero.webp' %}" alt="Hitchhiker's Guide" class="card-img-top">        
+                <div class="card-body">
+                    <h2>The Hitchhiker's Guide to the Galaxy</h2>
+                    <p><em>The universe is big. Really big. You just won't believe how vastly, hugely, mind-bogglingly big it is.</em></p>
+                    <p>Don't face it unprepared. The Hitchhiker's Guide to the Galaxy is the indispensable companion for anyone who finds themselves unexpectedly adrift in an infinite and largely baffling universe.</p>
+                    <p><strong>Now available in a handsome physical edition from Megadodo Publications.</strong></p>
+                    <a href="{% url 'product_list' %}" class="btn">Shop Now</a>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+
+        <!-- Card two -->
+                <div class="col-12 col-md-5">
+            <div class="card h-100">
+                <img src="{% static 'images/hero.webp' %}" alt="53 More Things" class="card-img-top">        
+                <div class="card-body">
+                    <h2>53 More Things To Do in Zero Gravity</h2>
+                    <p><em>Bored of just floating? So were we.</em></p>
+                    <p>The follow-up nobody asked for but everybody needed. 53 More Things To Do in Zero Gravity is packed with practical activities, ill-advised experiments and one chapter the publishers strongly recommend skipping entirely.</p>
+                    <p><strong>Perfect for the seasoned hitchhiker with time on their hands.</strong></p>
+                    <a href="{% url 'product_list' %}" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
 {% endblock content %}

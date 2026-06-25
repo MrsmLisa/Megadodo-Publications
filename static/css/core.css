@@ -19,6 +19,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Contrail One', serif;
 }
 
+/* Header and navbar */
+
 header {
     position: fixed;
     width: 100%;
@@ -42,6 +44,37 @@ main {
     padding-top: 90px;
 }
 
+/* Footer */
+
+.footer {
+    background-color: black;
+    color: white;
+    margin-top: auto;
+}
+
+.footer h5 {
+    color: white;
+}
+
+.footer p {
+    color: #cccccc;
+}
+
+.footer-link {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.footer-divider {
+    border-color: #444444;
+}
+
+/* Index page */
+
 .index-hero {
     background-color: #f8f9fa;
     display: flex;
@@ -51,10 +84,8 @@ main {
     color:black;
 }
 
-.home-title {
-    font-family: 'Contrail One', serif;
-    font-size: 3rem;
-}
+
+
 
 @media (max-width: 400px) {
     .navbar-brand {
