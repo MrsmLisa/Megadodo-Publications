@@ -13,27 +13,79 @@ body {
     margin: 0;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding-top: 80px;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Contrail One', serif;
+}
+
+/* Header and navbar */
 
 header {
-    background-color: black !important;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 0;
+    background-color: black;
+    z-index: 1000;
 }
 
+.navbar-toggler {
+    border: none;
+    color: white;
+}
+
+.fa-solid, .cart-count {
+    color: white;
+    margin: 4px;
+}
+
+main {
+    padding-top: 90px;
+}
+
+/* Footer */
+
+.footer {
+    background-color: black;
+    color: white;
+    margin-top: auto;
+}
+
+.footer h5 {
+    color: white;
+}
+
+.footer p {
+    color: #cccccc;
+}
+
+.footer-link {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.footer-divider {
+    border-color: #444444;
+}
+
+/* Index page */
+
 .index-hero {
-    background-color: #000000;
-    max-height: 400px;
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color:black;
 }
 
-.home-title {
-    font-family: 'nabla', serif;
-    font-size: 3rem;
-}
+
+
 
 @media (max-width: 400px) {
     .navbar-brand {
