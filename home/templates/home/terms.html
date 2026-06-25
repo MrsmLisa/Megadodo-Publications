@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Terms and Conditions</h1>
+            <p><em>"Please read these terms carefully. Or don't. The universe will continue either way."</em></p>
+            <p><small>Last updated: Stardate unclear. Sometime recently.</small></p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By using the Megadodo Publications website, you agree to these terms and conditions in their entirety. If you do not agree, we suggest you close the browser, make yourself a cup of tea and have a good think about your life choices. We will still be here when you get back.</p>
+
+                        <h2>2. Products</h2>
+            <p>All products sold by Megadodo Publications are described as accurately as possible given the limitations of language, the complexity of the universe and the fact that our product descriptions were written on a Tuesday. We cannot guarantee that The Hitchhiker's Guide to the Galaxy will prevent all disasters, but we feel confident it will help.</p>
+
+            <h2>3. The Towel</h2>
+            <p>The Megadodo Publications Official Hitchhiker's Towel is sold as a towel. It is a towel. Any additional uses — including but not limited to intergalactic distress signals, impromptu blankets or defensive measures against Ravenous Bugblatter Beasts of Traal — are undertaken entirely at the buyer's own risk.</p>
+
+            <h2>4. Pricing</h2>
+            <p>All prices are listed in Euros. We do not accept Altairian Dollars, Flanian Pobble Beads or any other galactic currency at this time, though we are open to negotiation on this point.</p>
+
+            <h2>5. Returns</h2>
+            <p>We accept returns within 30 days of purchase, provided the item is in its original condition and has not been used to navigate a hyperspace bypass. Books that have been read are still eligible for return, as long as they have not been annotated in permanent marker.</p>
+
+            <h2>6. Limitation of Liability</h2>
+            <p>Megadodo Publications accepts no liability for any loss, damage, existential crisis, unexpected encounters with Vogons or improbability events arising from the use of our products. We also accept no liability for the heat death of the universe, though we acknowledge it is coming and suggest you plan accordingly.</p>
+
+            <h2>7. Changes to These Terms</h2>
+            <p>We reserve the right to update these terms at any time. Changes will be posted on this page. We will not notify you personally as we do not have the staffing capacity, but we do recommend checking back occasionally, particularly if you are about to make a large purchase.</p>
+
+            <h2>8. Contact</h2>
+            <p>If you have any questions about these terms, please <a href="{% url 'contact' %}">contact us</a>. We will do our best to respond within a reasonable timeframe, galactic distances permitting.</p>
+            
+            <p class="mt-4"><strong>Don't Panic. These terms are mostly harmless.</strong></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
