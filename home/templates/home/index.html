@@ -2,6 +2,15 @@
 {% load static %}
 
 {% block content %}
+
+<div class="container text-center mt-4 mb-4">
+    <h1 class="home-title">Welcome to Megadodo Publications</h1>
+    <p class="home-subtitle"><em>Publishers of the Hitchhiker's Guide to the Galaxy and other essential reading for the modern galactic traveller.</em></p>
+    <p>Whether you are a seasoned hitchhiker or a first-time traveller facing the vast indifference of the universe for the very first time, you have come to the right place. Megadodo Publications has been providing essential reading to the discerning interstellar wanderer for several million years.</p>
+    <p>Browse our collection of indispensable guides, practical handbooks and one or two books that are, on balance, probably fine.</p>
+    <a href="{% url 'product_list' %}" class="btn mt-2">Browse the Shop</a>
+</div>
+
 <!--Cards from Bootstrap-->
 <div class="container mt-4">
     <div class="row justify-content-center g-4">
@@ -23,7 +32,7 @@
         <!-- Card two -->
                 <div class="col-12 col-md-5">
             <div class="card h-100">
-                <img src="{% static 'images/hero.webp' %}" alt="53 More Things" class="card-img-top">        
+                <img src="{% static 'images/hero2.webp' %}" alt="53 More Things" class="card-img-top">        
                 <div class="card-body">
                     <h2>53 More Things To Do in Zero Gravity</h2>
                     <p><em>Bored of just floating? So were we.</em></p>
