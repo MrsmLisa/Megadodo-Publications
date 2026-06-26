@@ -36,7 +36,9 @@
     <!-- navbar from Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Megadodo <br> Publications</a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.webp' %}" alt="Megadodo Publications Logo" class="logo" height="60">
+            </a>
             <div class="d-flex align-items-center ms-auto order-lg-last">
                 <!-- User dropdown -->
                 <li class="nav-item dropdown list-unstyled">
@@ -125,9 +127,9 @@
             <!-- Social media -->
             <div class="col-12 col-md-4 text-center mb-3">
                 <h5>Follow Us on Earth</h5>
-                <a href="#" class="footer-link me-3" aria-label="Facebook"><i class="fa-brands fa-facebook fa-xl"></i></a>
-                <a href="#" class="footer-link me-3" aria-label="Instagram"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                <a href="#" class="footer-link me-3" aria-label="Twitter"><i class="fa-brands fa-x-twitter fa-xl"></i></a>
+                <a href="https://www.facebook.com/" class="footer-link me-3" aria-label="Facebook"><i class="fa-brands fa-facebook fa-xl"></i></a>
+                <a href="https://www.instagram.com/" class="footer-link me-3" aria-label="Instagram"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                <a href="https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy_(fictional)" class="footer-link me-3" aria-label="Wikipedia"><i class="fa-brands fa-wikipedia-w fa-xl"></i></a>
             </div>
 
             <!-- Newsletter -->
@@ -156,6 +158,7 @@
         <hr class="foot-divider">
 
         <div class="text-center">
+            <img src="{% static 'images/logo.webp' %}" alt="Megadodo Publications Logo" class="logo" height="90">    
             <p class="mb-0">&copy; 2026 Megadodo Publications. All rights reserved.</p>
             <p><small>Don't Panic.</small></p>
         </div>
