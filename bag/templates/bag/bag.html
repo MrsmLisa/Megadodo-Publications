@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Shopping Bag</h1>
+
+    {% if bag_items %}
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Subtotal</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in bag_items %}
+                    <tr>
+                    <td>
+                        {% if item.product.image %}
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-thumbnail" style="width: 60px;">
+                        {% endif %}
+                        <p>{{ item.product.name }}</p>
+                    </td>
+                    <td>€{{ item.product.price }}</td>
+                    <td>
+                        <form method="post" action="{% url 'update_bag' item.product.id %}">
+                            {% csrf_token %}
+                            <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"class="form-control" style="width: 70px;">
+                            <button type="submit" class="btn btn-sm mt-1">Update</button>
+                        </form>
+                    </td>
+                    <td>€{{ item.subtotal }}</td>
+                    <td>
+                        <form method="post" action="{% url 'remove_from_bag' item.product.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+<!-- Totals -->
+
+<div class="row justify-content-end">
+    <div class="col-12 col-md-4">
+        <table class="table">
+            <tr>
+                <th>Total:</th>
+                <td>€{{ total }}</td>
+            </tr>
+            <tr>
+                <th>Delivery:</th>
+                <td>€{{ delivery }}</td>
+            </tr>
+            {% if free_delivery_delta > 0 %}
+            <tr>
+                <td colespan="2">
+                    <p class="text-danger">Spend €{{ free_delivery_delta }} more for free delivery!</p>
+                </td>
+            </tr>
+            {% endif %}
+            <tr>
+                <th>Grand Total:</th>
+                <td><strong>€{{ grand_total }}</strong></td>
+            </tr>
+        </table>
+        <a href="{% url 'product_list' %}" class="btn mt-2">Continue Shopping</a>
+        <a href="#" class="btn mt-2">Checkout</a>
+    </div>
+</div>
+
+{% else %}
+<div class="text-center mt-5">
+    <p>Your bag is empty. Don't panic – there are plenty of products to browse!</p>
+    <a href="{% url 'product_list' %}" class="btn mt-2">Browse the Shop</a>
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock content %}

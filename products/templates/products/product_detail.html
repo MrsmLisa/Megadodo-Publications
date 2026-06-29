@@ -11,17 +11,27 @@
         {% else %}
             <img src="{% static 'images/no_image.png' %}" class="card-img-top" alt="{{ product.name }}">
         {% endif %}
-    
+    </div>
+
     <!-- Details -->
-    </div>
     <div class="col-12 col-md-6">   
-    <h1>{{ product.name }}</h1>
-    {% if product.author %}
-    <p>By {{ product.author }}</p>
-    {% endif %}
-    <h2>€ {{ product.price }}</h2>
-    <p>{{ product.description|safe }}</p>
-    </div>
+        <h1>{{ product.name }}</h1>
+        {% if product.author %}
+            <p>By {{ product.author }}</p>
+        {% endif %}
+        <h2>€ {{ product.price }}</h2>
+        <p>{{ product.description|safe }}</p>
+
+        <!-- Add to Bag form -->
+        <form method="post" action="{% url 'add_to_bag' product.id %}">
+            {% csrf_token %}
+            <div class="d-flex align-items-center mt-3 gap-3">
+                <input type="number" name="quantity" id="quantity" value="1" min="1" max="99" class="form-control" style="width: 80px;">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <button type="submit" class="btn">Add to Bag</button>
+            </div>
+        </form>
+        <a href="{% url 'product_list' %}" class="btn mt-3">Back to Shop</a>
     </div>
     
 </div>
