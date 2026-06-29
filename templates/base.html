@@ -60,7 +60,7 @@
                 </li>
 
                 <!-- Shopping cart -->
-                <a class="shopping-cart-link nav-link" href="#" role="button">
+                <a class="shopping-cart-link nav-link" href="{% url 'view_bag' %}" role="button">
                     <i class="fa-solid fa-basket-shopping"></i>
                     <span class="cart-count">
                         {% if grand_total %}
@@ -146,7 +146,7 @@
                 <form action="">
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-outline-dark" type="submit">Sign Up</button>
+                        <button class="btn btn-outline-secondary" type="submit">Sign Up</button>
                     </div>
                 </form>
             </div>
