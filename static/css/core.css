@@ -8,7 +8,7 @@ html {
 
 body {
     font-family: 'Cantarell', sans-serif;
-    background-color: #f8f9fa;
+    background-color: white;
     min-height: 100vh;
     margin: 0;
     display: grid;
@@ -26,47 +26,58 @@ header {
     width: 100%;
     top: 0;
     padding: 0;
-    background-color: black;
+    background-color: #e5e7ea;
     z-index: 1000;
+}
+
+.navbar {
+    padding: none !important;
+    background-color: #eff1f3;
 }
 
 .navbar-toggler {
     border: none;
-    color: white;
+    color: black;
 }
 
 .fa-solid, .cart-count {
-    color: white;
+    color: black;
     margin: 4px;
 }
 
+.banner {
+    text-decoration: none;
+    color: black;
+    padding: 2px;
+}
+
 main {
-    padding-top: 90px;
+    padding-top: 120px;
 }
 
 /* Footer */
 
 .footer {
-    background-color: black;
-    color: white;
+    background-color: #eff1f3;
+    color: black;
     margin-top: auto;
 }
 
 .footer h5 {
-    color: white;
+    color: black;
 }
 
 .footer p {
-    color: #cccccc;
+    color: #333333;
 }
 
 .footer-link {
-    color: #cccccc;
+    color: #333333;
     text-decoration: none;
 }
 
 .footer-link:hover {
-    color: white;
+    color: black;
 }
 
 .footer-divider {

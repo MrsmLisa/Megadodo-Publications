@@ -34,7 +34,7 @@
 <body>
 <header>
     <!-- navbar from Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/logo.webp' %}" alt="Megadodo Publications Logo" class="logo" height="60">
@@ -89,6 +89,9 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/products/' %}active{% endif %}" href="{% url 'product_list' %}">Shop</a>
+                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
@@ -99,6 +102,10 @@
             </div>
         </div>
     </nav>
+    
+    <div class="text-center">
+        <a class="banner" href="#">BUY A BOOK, GET A TOWEL FOR FREE!</a>
+    </div>
 </header>
 
 
@@ -139,7 +146,7 @@
                 <form action="">
                     <div class="input-group">
                         <input type="email" class="form-control" placeholder="Your email">
-                        <button class="btn btn-outline-light" type="submit">Sign Up</button>
+                        <button class="btn btn-outline-dark" type="submit">Sign Up</button>
                     </div>
                 </form>
             </div>
