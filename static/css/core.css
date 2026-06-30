@@ -31,7 +31,6 @@ header {
 }
 
 .navbar {
-    padding: none !important;
     background-color: #eff1f3;
 }
 
@@ -43,12 +42,13 @@ header {
 .fa-solid, .cart-count {
     color: black;
     margin: 4px;
+    font-size: 1.2rem;
 }
 
 .banner {
     text-decoration: none;
     color: black;
-    padding: 2px;
+    margin: 0;
 }
 
 main {
@@ -95,11 +95,3 @@ main {
     color:black;
 }
 
-
-
-
-@media (max-width: 400px) {
-    .navbar-brand {
-        display: none;
-    }
-}

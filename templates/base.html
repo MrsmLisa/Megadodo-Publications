@@ -30,6 +30,7 @@
     {% endblock core_js %}
 
     <title>Megadodo Publications {% block extra_title %} {% endblock extra_title %} </title>
+    <link rel="icon" href="{% static 'images/mdp.webp' %}" type="image/x-icon">
 </head>
 <body>
 <header>
@@ -37,7 +38,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/logo.webp' %}" alt="Megadodo Publications Logo" class="logo" height="60">
+                <img src="{% static 'images/mdp.webp' %}" alt="Megadodo Publications Logo" class="logo" height="60">
             </a>
             <div class="d-flex align-items-center ms-auto order-lg-last">
                 <!-- User dropdown -->
@@ -103,30 +104,40 @@
         </div>
     </nav>
     
-    <div class="text-center">
-        <a class="banner" href="#">BUY A BOOK, GET A TOWEL FOR FREE!</a>
+    <div class="row text-center">
+        <p class="banner" href="#">FREE DELIVERY ON ORDERS OVER €{{ free_delivery_threshold }}</p>
     </div>
-</header>
-
-
-
-    {% if messages %}
-    <div class="alert alert-info" role="alert">
-        {% for message in messages %}
-        <p>{{ message }}</p>
-        {% endfor %}
-    </div>
-    {% endif %}
-
+    </header>
     {% block page_header %}
     {% endblock page_header %}
 
+    <!-- Main content -->
     <main>
+    
+    <!-- 000: Display messages -->
+    {% if messages %}
+    <div class="message-container">
+    {% for message in messages %}
+        {% with message.level as level %}
+            {% if level == 40 %}
+                {% include 'includes/toasts/toast_error.html' %}
+            {% elif level == 30 %}
+                {% include 'includes/toasts/toast_warning.html' %}
+            {% elif level == 25 %}
+                {% include 'includes/toasts/toast_success.html' %}
+            {% else %}
+                {% include 'includes/toasts/toast_info.html' %}
+            {% endif %}
+        {% endwith %}
+    {% endfor %}
+    </div>
+    {% endif %}
 
     {% block content %}
     {% endblock content %}
-
     </main>
+    
+    <!-- Footer -->
     <footer class="footer">
     <div class="container py-4">
         <div class="row">
