@@ -111,10 +111,7 @@
     {% block page_header %}
     {% endblock page_header %}
 
-    <!-- Main content -->
-    <main>
-    
-    <!-- 000: Display messages -->
+        <!-- 000: Display messages -->
     {% if messages %}
     <div class="message-container">
     {% for message in messages %}
@@ -132,6 +129,10 @@
     {% endfor %}
     </div>
     {% endif %}
+
+    <!-- Main content -->
+    <main>
+    
 
     {% block content %}
     {% endblock content %}

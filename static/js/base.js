@@ -10,3 +10,15 @@ document.addEventListener('click', function(event) {
         toggler.click();
     }
 });
+
+// show all toasts
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded and parsed');
+    const toastElements = document.querySelectorAll('.toast');
+    toastElements.forEach(function(toastElement) {
+        const toast = new bootstrap.Toast(toastElement, {
+            autohide: true, delay: 5000
+        });
+        toast.show();
+    });
+});
