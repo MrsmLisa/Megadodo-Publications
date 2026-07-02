@@ -57,5 +57,26 @@
         </div>
     </div>
 
+    <!-- Checkout Form -->
+    <div class="col-12 col-lg-6">
+        <h2 class="h4">Please fill in your details</h2>
+        <form method="post" action="{% url 'checkout' %}">
+            {% csrf_token %}
+            <fieldset class="mb-3">
+                <legend class="fieldset-label small mb-1">Details</legend>
+                {{ order_form.full_name }}
+                {{ order_form.email }}
+            </fieldset>
+            <fieldset class="mb-3">
+                <legend class="fieldset-label small mb-1">Delivery</legend>
+                {{ order_form.phone_number }}
+                {{ order_form.street_address1 }}
+                {{ order_form.street_address2 }}
+                {{ order_form.postcode }}
+                {{ order_form.town_or_city }}
+                {{ order_form.country }}
+            </fieldset>
+    </div>
+
 
 {% endblock %}
