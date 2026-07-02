@@ -21,8 +21,8 @@
                     </div>
                     <div class="col-5 text-end">
                         <p class="mb-1 mt-0 small text-muted">Subtotal</p>
-                </div>
-            </div>
+                    </div>
+        </div>
             {% for item in bag_items %}
             <div class="row">
                 <div class="col-2 mb1">
@@ -76,7 +76,36 @@
                 {{ order_form.town_or_city }}
                 {{ order_form.country }}
             </fieldset>
+            <fieldset class="mb-3">
+                <legend class="fieldset-label small mb-1">Payment</legend>
+                <!-- Stripe card element -->
+                <div id="card-element" class="mb-3"></div>
+                <!-- Form errors -->
+                <div id="card-errors" class="mb-3 text-danger" role="alert"></div>
+                <input type="hidden" name="client_secret" value="{{ client_secret }}">
+            </fieldset>
+            <div class="d-flex justify-content-between mt-3">
+                <a href="{% url 'view_bag' %}" class="btn">
+                    <i class="fas fa-chevron-left me-1"></i> Adjust Bag
+                </a>
+                <button type="submit" id="submit-button" class="btn">
+                    <i class="fas fa-lock me-1"></i> Complete Order
+                </button>
+            </div>
+            <p class="small text-danger mt-2 text-end">
+                <i class="fas fa-exclamation-circle me-1"></i>
+                Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong> 
+            </p>
+        </form>
     </div>
+</div>
+
+{% block post_load_js %}
+{{ stripe_public_key|json_script:"stripe-public-key" }}
+{{ client_secret|json_script:"client-secret" }}
+<script src="https://js.stripe.com/v3/"></script>
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock post_load_js %}
 
 
-{% endblock %}
+{% endblock content %}
