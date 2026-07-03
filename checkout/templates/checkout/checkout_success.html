@@ -1,13 +1,91 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="container mt-4">
-    <h1>Thank You!</h1>
-    <p>Your order number is <strong>{{ order.order_number }}</strong></p>
-    <p>A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <h1>Thank You!</h1>
+            <p>Your order has been received and is being processed. Don't panic - everything is under control.</p>
+            <p>A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h2 class="h4 mb-3 card-title">Order Summary</h2>
+
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted">Order Number:</div>
+                        <div class="col-6">{{ order.id }}</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted">Order Date:</div>
+                        <div class="col-6">{{ order.date }}</div>
+                    </div>
+
+                    <hr>
+                    <h3 class="h5 mb-3">Items Ordered</h3>
+                    {% for item in order.lineitems.all %}
+                    <div class="row mb-2">
+                        <div class="col-6">{{ item.product.name }}</div>
+                        <div class="col-3 text-muted">Qty: {{ item.quantity }}</div>
+                        <div class="col-3 text-end">€{{ item.lineitem_total }}</div>
+                    </div>
+                    {% endfor %}
+
+                    <hr>
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted">Order Total:</div>
+                        <div class="col-6 text-end">€{{ order.order_total }}</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted">Delivery:</div>
+                        <div class="col-6 text-end">€{{ order.delivery_cost }}</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted"><strong>Grand Total:</strong></div>
+                        <div class="col-6 text-end"><strong>€{{ order.grand_total }}</strong></div>
+                    </div>
+
+                    <hr>
+                    <h3 class="h5 mb-3">Delivery Details</h3>
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted">Full Name:</div>
+                        <div class="col-6">{{ order.full_name }}</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted">Address:</div>
+                        <div class="col-6">{{ order.address }}</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted">Address:</div>
+                        <div class="col-6">
+                            {{ order.street_address1 }}<br>
+                            {% if order.street_address2 %}
+                                {{ order.street_address2 }}<br>
+                            {% endif %}
+                            {{ order.postcode }} {{ order.town_or_city }}<br>
+                            {{ order.country }}
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6 text-muted">Phone Number:</div>
+                        <div class="col-6">{{ order.phone_number }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <button class="btn btn-outline-secondary mt-2"><a href="{% url 'home' %}">Return to Home</a></button>
+
+<!-- Loading overlay -->
+<div class="loading-overlay">
+    <div class="loading-spinner">
+        <i class="fas fa-circle-notch fa-spin fa-3x"></i>
+        <p class="mt-2">Processing your order...</p>
+    </div>
 </div>
+
 {% endblock content %}
