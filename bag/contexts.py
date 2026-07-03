@@ -18,13 +18,14 @@ def bag_contents(request):
             'subtotal': quantity * product.price,
         })
 
-    delivery = total * 10 / 100
-    free_delivery_threshold = 50
+    free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD
+    standard_delivery_percentage = settings.STANDARD_DELIVERY_PERCENTAGE
 
     if total >= free_delivery_threshold:
         delivery = 0
         free_delivery_delta = 0
     else:
+        delivery = (total * standard_delivery_percentage / 100)
         free_delivery_delta = free_delivery_threshold - total
 
     grand_total = total + delivery
