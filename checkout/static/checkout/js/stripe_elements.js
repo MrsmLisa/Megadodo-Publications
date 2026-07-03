@@ -91,14 +91,3 @@ form.addEventListener('submit', function(ev) {
         location.reload();
     });
 });
-
-// show loading overlay
-$('.loading-overlay').fadeIn(100);
-card.update({ 'disabled': true});
-$('#submit-button').attr('disabled', true);
-
-if (result.error) {
-    $('.loading-overlay').fadeOut(100);
-    card.update({ 'disabled': false});
-    $('#submit-button').attr('disabled', false);
-}
