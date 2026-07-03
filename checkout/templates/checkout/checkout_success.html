@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Thank You!</h1>
+    <p>Your order number is <strong>{{ order.order_number }}</strong></p>
+    <p>A confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+</div>
+{% endblock content %}

@@ -91,9 +91,6 @@ def checkout(request):
 
 
 def checkout_success(request, order_number):
-    """
-    Handle successful checkouts
-    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.success(request, f'Order successfully processed! \
