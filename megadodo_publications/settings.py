@@ -31,6 +31,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '.herokuapp.com',
+    'https://megadodo-publications-8e99ae98d78e.herokuapp.com/',
     '127.0.0.1',
 ]
 
