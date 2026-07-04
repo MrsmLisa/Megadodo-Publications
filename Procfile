@@ -1,0 +1,1 @@
+web: gunicorn megadodo_publications.wsgi
