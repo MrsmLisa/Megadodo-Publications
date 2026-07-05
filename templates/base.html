@@ -51,7 +51,7 @@
                             <li><a class="dropdown-item" href="#">My Account</a></li>
                             <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                             {% if request.user.is_superuser %}
-                                <li><a class="dropdown-item" href="#">Admin</a></li>
+                                <li><a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a></li>
                             {% endif %}
                         {% else %}
                             <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a></li>
@@ -111,24 +111,7 @@
     {% block page_header %}
     {% endblock page_header %}
 
-        <!-- 000: Display messages -->
-    {% if messages %}
-    <div class="message-container">
-    {% for message in messages %}
-        {% with message.level as level %}
-            {% if level == 40 %}
-                {% include 'includes/toasts/toast_error.html' %}
-            {% elif level == 30 %}
-                {% include 'includes/toasts/toast_warning.html' %}
-            {% elif level == 25 %}
-                {% include 'includes/toasts/toast_success.html' %}
-            {% else %}
-                {% include 'includes/toasts/toast_info.html' %}
-            {% endif %}
-        {% endwith %}
-    {% endfor %}
-    </div>
-    {% endif %}
+    
 
     <!-- Main content -->
     <main>
