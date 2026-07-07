@@ -35,6 +35,10 @@ header {
     background-color: #0d111f;
 }
 
+.nav-link {
+    font-family: Contrail One, sans-serif;
+}
+
 .nav-link.active {
     color: white !important;
     border-bottom: 2px solid white;
@@ -51,14 +55,14 @@ header {
     font-size: 1.2rem;
 }
 
+.navbar-nav .nav-link {
+    color: white;
+}
+
 .banner {
     text-decoration: none;
     color: white;
     margin: 0;
-}
-
-.navbar-nav .nav-link {
-    color: white;
 }
 
 /* Main content */
@@ -175,12 +179,14 @@ main {
     border: 2px solid white
 }
 
-/* Product detail page */
+/* bag page */
 
-.product-detail-container {
-    color: white;
+.table {
+    --bs-table-striped-bg: #121932;
+    --bs-table-color: #fff;
+    --bs-table-border-color: #fff;
 }
 
-.card-img-top {
-    border: 2px solid white;
-    }
+td, th{
+    --bs-table-bg: #121932;
+}
