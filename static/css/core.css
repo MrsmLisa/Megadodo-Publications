@@ -8,7 +8,8 @@ html {
 
 body {
     font-family: 'Cantarell', sans-serif;
-    background-color: white;
+    color: white;
+    background-color: #121932;
     min-height: 100vh;
     margin: 0;
     display: grid;
@@ -26,29 +27,38 @@ header {
     width: 100%;
     top: 0;
     padding: 0;
-    background-color: #e5e7ea;
+    background-color: #182249;
     z-index: 1000;
 }
 
 .navbar {
-    background-color: #eff1f3;
+    background-color: #0d111f;
+}
+
+.nav-link.active {
+    color: white !important;
+    border-bottom: 2px solid white;
 }
 
 .navbar-toggler {
     border: none;
-    color: black;
+    color: white;
 }
 
 .fa-solid, .cart-count {
-    color: black;
+    color: white;
     margin: 4px;
     font-size: 1.2rem;
 }
 
 .banner {
     text-decoration: none;
-    color: black;
+    color: white;
     margin: 0;
+}
+
+.navbar-nav .nav-link {
+    color: white;
 }
 
 /* Main content */
@@ -103,30 +113,30 @@ main {
 /* Footer */
 
 .footer {
-    background-color: #eff1f3;
-    color: black;
+    background-color: #0d111f;
+    color: white;
     margin-top: auto;
 }
 
 .footer h5 {
-    color: black;
+    color: white;
 }
 
 .footer p {
-    color: #333333;
+    color: white;
 }
 
 .footer-link {
-    color: #333333;
+    color: white;
     text-decoration: none;
 }
 
 .footer-link:hover {
-    color: black;
+    color: white;
 }
 
 .footer-divider {
-    border-color: #444444;
+    border-color: white;
 }
 
 /* Index page */
@@ -137,6 +147,40 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:black;
+    color: white;
 }
 
+/* Product list page */
+
+.page-link {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+.page-link:hover {
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+.page-item.disabled .page-link {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    opacity: 0.5;
+}
+
+.card {
+    border: 2px solid white
+}
+
+/* Product detail page */
+
+.product-detail-container {
+    color: white;
+}
+
+.card-img-top {
+    border: 2px solid white;
+    }
