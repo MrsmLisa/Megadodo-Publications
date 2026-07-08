@@ -1,7 +1,7 @@
 from django.db import models
 from products.models import Product
-import uuid
 from django_countries.fields import CountryField
+import uuid
 
 # Create your models here.
 
