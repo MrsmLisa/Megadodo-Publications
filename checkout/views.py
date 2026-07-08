@@ -7,6 +7,8 @@ from .models import Order, OrderLineItem
 from products.models import Product
 from bag.contexts import bag_contents
 from django.views.decorators.http import require_POST
+from profiles.models import UserProfile
+
 import stripe
 import json
 
@@ -112,6 +114,15 @@ def checkout(request):
 def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+
+    messages.success(request, f'Order successfully processed! \
+        Your order number is {order_number}. A confirmation \
+        email will be sent to {order.email}.')
+
     if 'bag' in request.session:
         del request.session['bag']
 
@@ -121,3 +132,5 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
