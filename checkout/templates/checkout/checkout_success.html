@@ -75,8 +75,16 @@
                         <div class="col-6 text-muted">Phone Number:</div>
                         <div class="col-6">{{ order.phone_number }}</div>
                 </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="mt-4 text-center">
+        {% if from_profile %}
+            <a href="{% url 'profile' %}" class="btn mt-3">Back to Profile</a>
+        {% else %}
+            <a href="{% url 'product_list' %}" class="btn mt-3">Keep Shopping</a>
+        {% endif %}
     </div>
 </div>
 
