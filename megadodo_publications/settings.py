@@ -192,7 +192,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 APPEND_SLASH = True
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL', '')
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = False
