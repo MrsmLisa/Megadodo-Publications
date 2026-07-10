@@ -26,7 +26,7 @@ def cache_checkout_data(request):
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
-        request.session['save_info'] = 'save-info' in request.POST
+        request.session['save_info'] = request.POST.get('save_info')
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment cannot be \
