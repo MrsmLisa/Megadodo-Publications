@@ -90,6 +90,24 @@ def checkout(request):
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")
             return redirect(reverse('product_list'))
+        # Prefilled form with info from user profile if available
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'postcode': profile.default_postcode,
+                    'town_or_city': profile.default_town_or_city,
+                    'country': profile.default_country,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
