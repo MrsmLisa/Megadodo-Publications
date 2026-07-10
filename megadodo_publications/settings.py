@@ -203,6 +203,8 @@ STORAGES = {
     },
 }
 
+WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = False
 
