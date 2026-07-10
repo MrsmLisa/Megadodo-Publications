@@ -75,11 +75,22 @@
             {{ order_form.town_or_city }}
             {{ order_form.country }}
         </fieldset>
-            <fieldset class="mb-3">
-                <legend class="fieldset-label small mb-1">Payment</legend>
-                <!-- Stripe card element -->
-                <div id="card-element" class="mb-3 p-3 bg-white rounded border"></div>
-                <!-- Form errors -->
+        {% if user.is_authenticated %}
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="save_info" id="save-info">
+            <label class="form-check-label" for="save-info">Save this information for next time</label>
+        </div>
+        {% else %}
+        <p class="small mt-2">
+            <a href="{% url 'account_login' %}">Login</a> or 
+            <a href="{% url 'account_signup' %}">Sign up</a> to save your details for next time.
+        </p>
+        {% endif %}
+        <fieldset class="mb-3">
+            <legend class="fieldset-label small mb-1">Payment</legend>
+            <!-- Stripe card element -->
+            <div id="card-element" class="mb-3 p-3 bg-white rounded border"></div>
+            <!-- Form errors -->
                 <div id="card-errors" class="mb-3 text-danger" role="alert"></div>
                 <input type="hidden" name="client_secret" value="{{ client_secret }}">
             </fieldset>
