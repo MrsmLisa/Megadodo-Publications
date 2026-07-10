@@ -1,0 +1,192 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Contrail+One&family=Nabla&display=swap');
+
+html {
+    width: auto;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Cantarell', sans-serif;
+    color: white;
+    background-color: #121932;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Contrail One', serif;
+}
+
+/* Header and navbar */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 0;
+    background-color: #182249;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: #0d111f;
+}
+
+.nav-link {
+    font-family: Contrail One, sans-serif;
+}
+
+.nav-link.active {
+    color: white !important;
+    border-bottom: 2px solid white;
+}
+
+.navbar-toggler {
+    border: none;
+    color: white;
+}
+
+.fa-solid, .cart-count {
+    color: white;
+    margin: 4px;
+    font-size: 1.2rem;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.banner {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+}
+
+/* Main content */
+main {
+    padding-top: 120px;
+}
+
+/* Toasts */
+
+.message-container {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.custom-toast {
+    min-width: 300px;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+.arrow-success {
+    border-bottom : 10px solid #28a745;
+}
+
+.arrow-danger {
+    border-bottom : 10px solid #dc3545;
+}
+
+.arrow-warning {
+    border-bottom : 10px solid #ffc107;
+}
+
+.arrow-info {
+    border-bottom : 10px solid #17a2b8;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #0d111f;
+    color: white;
+    margin-top: auto;
+}
+
+.footer h5 {
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.footer-divider {
+    border-color: white;
+}
+
+/* Index page */
+
+.index-hero {
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Product list page */
+
+.page-link {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+.page-link:hover {
+    background-color: white;
+    border-color: white;
+    color: black;
+}
+
+.page-item.disabled .page-link {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    opacity: 0.5;
+}
+
+.card {
+    border: 2px solid white
+}
+
+/* bag page */
+
+.table {
+    --bs-table-striped-bg: #121932;
+    --bs-table-color: #fff;
+    --bs-table-border-color: #fff;
+}
+
+td, th{
+    --bs-table-bg: #121932;
+}
