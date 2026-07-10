@@ -199,7 +199,7 @@ STORAGES = {
     },
 }
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 
 WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
