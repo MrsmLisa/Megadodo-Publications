@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1>Thank You, {{ name }}!</h1>
+    <p><em>Your message has been received and is travelling through hyperspace towards our offices.</em></p>
+    <p>We will get back to you as soon as possible, galactic distances permitting.</p>
+    <p>In the meantime, why not browse our collection of essential intergalactic reading material?</p>
+    <a href="{% url 'product_list' %}" class="btn mt-3">Browse the Shop</a>
+    <a href="{% url 'home' %}" class="btn mt-3">Go Home</a>
+</div>
+{% endblock content %}
