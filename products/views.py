@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
+from oauthlib.uri_validate import query
 from .models import Product
 from django.views.generic import ListView
+from django.db.models import Q
 
 # Create your views here.
 
@@ -13,10 +15,19 @@ class ProductListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        category = self.request.GET.get('category')
-        if category:
-            queryset = queryset.filter(category=category)
+        query = self.request.GET.get('q')
+        if query:
+            queryset = queryset.filter(
+                Q(name__icontains=query) | 
+                Q(description__icontains=query) |
+                Q(author__icontains=query)
+            )
         return queryset
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['search_term'] = self.request.GET.get('q', '')
+        return context
     
 
 def product_detail(request, pk):

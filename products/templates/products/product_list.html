@@ -3,6 +3,17 @@
 
 {% block content %}
 
+{% if search_term %}
+    <div class="container mt-3">
+        <p>Search results for <strong>"{{ search_term }}"</strong>:</p>
+        {% if not products %}
+            <p>No products found.
+                <a href="{% url 'product_list' %}">View all products</a>
+            </p>
+        {% endif %}
+    </div>
+{% endif %}
+
     <div class="row text-center">
         <p class="banner" href="#">FREE DELIVERY ON ORDERS OVER €{{ free_delivery_threshold }}</p>
     </div>
