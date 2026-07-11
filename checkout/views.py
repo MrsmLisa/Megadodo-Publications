@@ -121,9 +121,6 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
         
-
-        order_form = OrderForm()
-
         context = {
             'order_form': order_form,
             'stripe_public_key': stripe_public_key,
