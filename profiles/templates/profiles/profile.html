@@ -10,19 +10,19 @@
         </div>
     </div>
     
-    <div class="row">
+    <div class="row mt-4">
         <div class="col-12 col-lg-6">
             <h2 class="h4">Default Delivery Information</h2>
             <form action="{% url 'profile' %}" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-outline-secondary">Update</button>
+                <button type="submit" class="btn btn-outline-light mt-4">Update</button>
             </form>
         </div>
     </div>
 
     <!-- Order History -->
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6 my-5">
         <h2 class="h4">Order History</h2>
         {% if orders %}
             <table class="table">
