@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from products.models import Product
 from django_countries.fields import CountryField
@@ -34,11 +36,14 @@ class Order(models.Model):
     
     def update_total(self):
         from django.conf import settings
-        self.order_total = self.lineitems.aggregate(models.Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+        self.order_total = self.lineitems.aggregate(
+            models.Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        if self.order_total == 0:
+            self.delivery_cost = Decimal('0.00')  # No delivery charge for an empty order
+        elif self.order_total < 50:
+            self.delivery_cost = Decimal('4.99')  # Flat rate delivery charge for orders below $50
         else:
-            self.delivery_cost = 0
+            self.delivery_cost = Decimal('0.00')  # Free delivery for orders above $50
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 

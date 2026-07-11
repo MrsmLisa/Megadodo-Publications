@@ -22,8 +22,11 @@ def bag_contents(request):
 
     free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD
 
-    if total >= free_delivery_threshold:
-        delivery = 0
+    if total == 0:
+        delivery = Decimal('0.00')  # No delivery charge for an empty bag
+        free_delivery_delta = 0
+    elif total >= free_delivery_threshold:
+        delivery = Decimal('0.00')  # Free delivery for orders above the threshold
         free_delivery_delta = 0
     else:
         delivery = Decimal('4.99')  # Flat rate delivery charge
