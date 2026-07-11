@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.conf import settings
 from products.models import Product
 
@@ -19,13 +21,12 @@ def bag_contents(request):
         })
 
     free_delivery_threshold = settings.FREE_DELIVERY_THRESHOLD
-    standard_delivery_percentage = settings.STANDARD_DELIVERY_PERCENTAGE
 
     if total >= free_delivery_threshold:
         delivery = 0
         free_delivery_delta = 0
     else:
-        delivery = (total * standard_delivery_percentage / 100)
+        delivery = Decimal('4.99')  # Flat rate delivery charge
         free_delivery_delta = free_delivery_threshold - total
 
     grand_total = total + delivery
