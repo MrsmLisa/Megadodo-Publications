@@ -58,32 +58,6 @@
             <p>You have no orders yet. <a href="{% url 'product_list' %}">Start shopping!</a></p>
         {% endif %}
     </div>
-</div>
 
-<!-- Contact history -->
-<div class="col-12 col-lg-6 my-5">
-    <h2 class="h4">My Messages</h2>
-    {% if contacts %}
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Subject</th>
-                    <th>Message</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for contact in contacts %}
-                    <tr>
-                        <td>{{ contact.created_at | date:"d M, Y" }}</td>
-                        <td>{{ contact.subject }}</td>
-                        <td>{{ contact.message }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p>You have no messages yet. <a href="{% url 'contact' %}">Contact Us</a></p>
-    {% endif %}
 </div>
 {% endblock content %}
