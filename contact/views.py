@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Contact
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
 
 def contact_create(request):
     if request.method == 'POST':
@@ -10,7 +13,6 @@ def contact_create(request):
         message = request.POST.get('message')
         created_at = request.POST.get('created_at') 
 
-        from .models import Contact
         contact = Contact(name=name, email=email, subject=subject, message=message)
         contact.save()
 
@@ -24,10 +26,10 @@ def contact_read(request):
     contacts = Contact.objects.all()
     return render(request, 'contact/contact_list.html', {'contacts': contacts})
 
-
+@login_required
 def contact_update(request, contact_id):
     from .models import Contact
-    contact = Contact.objects.get(id=contact_id)
+    contact = get_object_or_404(Contact, id=contact_id)
 
     if request.method == 'POST':
         contact.name = request.POST.get('name')
@@ -41,9 +43,10 @@ def contact_update(request, contact_id):
     return render(request, 'contact/contact_form.html', {'contact': contact})
 
 
+@login_required
 def contact_delete(request, contact_id):
     from .models import Contact
-    contact = Contact.objects.get(id=contact_id)
+    contact = get_object_or_404(Contact, id=contact_id)
     contact.delete()
-    return render(request, 'contact/contact_list.html', {'contacts': Contact.objects.all()})
+    return redirect('contact_read')  # Redirect to the contact list view after deletion
 

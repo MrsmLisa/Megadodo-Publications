@@ -9,20 +9,9 @@
             <p>Whether you have a question about an order, a suggestion for our next publication or simply wish to tell us about something remarkable you encountered in the outer spiral arm of the galaxy, we would love to hear from you.</p>
             <p>Please note that messages sent via Sirius Cybernetics Corporation communication systems may take slightly longer to arrive than expected, and we cannot be held responsible for any existential crises triggered by our auto-reply.</p>
 
-            <form method="post" class="mt-4">
+            <form method="post" class="mt-4" action="{% url 'contact' %}">
                 {% csrf_token %}
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Please describe your query in as much detail as possible. Avoid Vogon poetry where possible." required></textarea>
-                </div>
+                {{ form.as_p }}
                 <button type="submit" class="btn btn-outline-light">Send Message</button>
             </form>
 
