@@ -10,9 +10,6 @@ def index(request):
 def about (request):
     return render(request, 'home/about.html')
 
-def contact (request):
-    return render(request, 'home/contact.html')
-
 def terms (request):
     return render(request, 'home/terms.html')
 

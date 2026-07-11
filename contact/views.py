@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contact
 from django.contrib.auth.decorators import login_required
+from .forms import ContactForm
 
 # Create your views here.
 
@@ -11,14 +12,13 @@ def contact_create(request):
         email = request.POST.get('email')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
-        created_at = request.POST.get('created_at') 
 
         contact = Contact(name=name, email=email, subject=subject, message=message)
         contact.save()
 
         return render(request, 'contact/thank_you.html', {'name': name})
-
-    return render(request, 'contact/contact_form.html')
+    form = ContactForm()
+    return render(request, 'contact/contact_form.html', {'form': form})
 
 
 def contact_read(request):
@@ -40,7 +40,8 @@ def contact_update(request, contact_id):
 
         return render(request, 'contact/thank_you.html', {'name': contact.name})
 
-    return render(request, 'contact/contact_form.html', {'contact': contact})
+    form = ContactForm(instance=contact)
+    return render(request, 'contact/contact_form.html', {'form': form, 'contact': contact})
 
 
 @login_required
