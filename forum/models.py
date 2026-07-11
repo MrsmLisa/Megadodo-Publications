@@ -11,6 +11,9 @@ class Question(models.Model):
     def __str__(self):
         return self.question
     
+    class Meta:
+        ordering = ['-created_at']  # Orders questions by creation date, newest first
+    
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
@@ -20,3 +23,6 @@ class Answer(models.Model):
 
     def __str__(self):
         return f'Answer to: {self.question.question}'  # Display the first 50 characters of the answer
+
+    class Meta:
+        ordering = ['-created_at']  # Orders answers by creation date, newest first
