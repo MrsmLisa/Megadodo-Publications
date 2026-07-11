@@ -14,10 +14,13 @@
     </div>
 {% endif %}
 
-    <div class="row text-center">
-        <p class="banner" href="#">FREE DELIVERY ON ORDERS OVER €{{ free_delivery_threshold }}</p>
-    </div>
+    <!-- Banner -->
+<div class="row text-center">
+    <p class="banner" href="#">FREE DELIVERY ON ORDERS OVER €{{ free_delivery_threshold }}</p>
+</div>
 
+
+<!-- Product cards -->
 <div class="container mt-3" style="max-width: 900px;">
     <div class="row justify-content-center g-4">
         {% for product in products %}
