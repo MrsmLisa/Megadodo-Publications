@@ -4,15 +4,14 @@ from django.contrib import messages
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
+from contact.models import Contact
 
 # Create your views here.
 
 @login_required
 def profile(request):
-    """
-    Display the user's profile
-    """
     profile = get_object_or_404(UserProfile, user=request.user)
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -23,14 +22,16 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
+    contacts = Contact.objects.filter(email=request.user.email).order_by('-created_at')
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'contacts': contacts,
         'on_profile_page': True
     }
 
-    return render(request, template, context)
+    return render(request, 'profiles/profile.html', context)
 
 
 @login_required
