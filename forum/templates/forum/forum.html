@@ -6,13 +6,13 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
             <h1>The Galactic Forum</h1>
-            <p><em>Got a question about the universe? Ask here. Someone probably knows the answer. It might even be 42.</em></p>
+            <p><em>Got a question about the universe? Ask here. Someone probably knows the answer.</em></p>
             <hr>
 
             {% if user.is_authenticated %}
-            <a href="{% url 'create_question' %}" class="btn mb-4">Ask a Question</a>
+            <a href="{% url 'create_question' %}" class="btn btn-outline-light mb-4">Ask a Question</a>
             {% else %}
-            <p class="mb-4">Please <a href="{% url 'login' %}">log in</a> to ask a question.</p>
+            <p class="mb-4">Please <a href="{% url 'account_login' %}">log in</a> to ask a question.</p>
             {% endif %}
 
             {% for question in questions %}

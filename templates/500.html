@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1>500</h1>
+    <p><em>Something has gone horribly wrong. Even the Sirius Cybernetics Corporation is baffled.</em></p>
+    <p>Our team of researchers is on it. In the meantime, Don't Panic!</p>
+    <a href="{% url 'home' %}" class="btn btn-outline-light mt-3">Go Home</a>
+</div>
+{% endblock content %}
