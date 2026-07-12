@@ -28,8 +28,8 @@
                         . {{ question.answers.count }} answers {{ question.answers.count|pluralize }}
                     </small>
                     {% if user == question.created_by %}
-                    <a href="{% url 'edit_question' question.id %}" class="btn btn-sm">Edit</a>
-                    <a href="{% url 'delete_question' question.id %}" class="btn btn-sm">Delete</a>
+                    <a href="{% url 'edit_question' question.id %}" class="btn btn-sm btn-outline-light">Edit</a>
+                    <a href="{% url 'delete_question' question.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
                     {% endif %}
                 </div>
             </div>

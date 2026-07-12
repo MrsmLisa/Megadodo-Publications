@@ -13,8 +13,8 @@
                     <label for="answer" class="form-label">Answer</label>
                     <textarea class="form-control" id="answer" name="answer" rows="5" required>{{ answer.answer }}</textarea>
                 </div>
-                <button type="submit" class="btn">Update Answer</button>
-                <a href="{% url 'question_detail' answer.question.id %}" class="btn ms-2">Cancel</a>
+                <button type="submit" class="btn btn-outline-light">Update Answer</button>
+                <a href="{% url 'question_detail' answer.question.id %}" class="btn btn-outline-light ms-2">Cancel</a>
             </form>
         </div>
     </div>

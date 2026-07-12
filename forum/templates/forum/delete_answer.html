@@ -10,8 +10,8 @@
             <p><strong>{{ answer.answer|truncatechars:100 }}</strong></p>
             <form method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Delete Answer</button>
-                <a href="{% url 'question_detail' answer.question.id %}" class="btn ms-2">Cancel</a>
+                <button type="submit" class="btn btn-outline-danger">Delete Answer</button>
+                <a href="{% url 'question_detail' answer.question.id %}" class="btn btn-outline-light ms-2">Cancel</a>
             </form>
         </div>
     </div>
