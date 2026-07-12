@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="forum-container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <h1>Edit Answer</h1>
+            <hr>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="answer" class="form-label">Answer</label>
+                    <textarea class="form-control" id="answer" name="answer" rows="5" required>{{ answer.answer }}</textarea>
+                </div>
+                <button type="submit" class="btn">Update Answer</button>
+                <a href="{% url 'question_detail' answer.question.id %}" class="btn ms-2">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

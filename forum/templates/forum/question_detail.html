@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="forum-container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <a href="{% url 'forum' %}" class="btn mb-4">Back to Forum</a>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h1>{{ question.question }}</h1>
+                    <small class="text-muted">
+                    Asked by {{ question.created_by }} on {{ question.created_at|date:"d M Y" }}
+                    </small>
+                </div>
+            </div>
+
+            <h2 class="h4">{{ answers.count }} Answers {{ answers.count|pluralize }}</h2>
+            <hr>
+
+            {% for answer in answers %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <p>{{ answer.answer }}</p>
+                    <small class="text-muted">
+                        Answered by {{ answer.created_by }} on {{ answer.created_at|date:"d M Y" }}
+                    </small>
+                    {% if user == answer.created_by %}
+                    <div class="mt-2">
+                        <a href="{% url 'edit_answer' answer.id %}" class="btn btn-sm">Edit</a>
+                        <a href="{% url 'delete_answer' answer.id %}" class="btn btn-sm">Delete</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <p>No answers yet. Be the first to answer!</p>
+            {% endfor %}
+
+            {% if user.is_authenticated %}
+            <h2 class="h4 mt-4">Your Answer</h2>
+            <form method="post" action="{% url 'create_answer' question.id %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <textarea class="form-control" name="answer" rows="4" required placeholder="Share your knowledge with the galaxy..."></textarea>
+                </div>
+                <button type="submit" class="btn">Post Answer</button>
+            </form>
+            {% else %}
+            <p>Please <a href="{% url 'login' %}">log in</a> to post an answer.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

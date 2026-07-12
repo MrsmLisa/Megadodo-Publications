@@ -2,3 +2,42 @@
 {% load static %}
 
 {% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <h1>The Galactic Forum</h1>
+            <p><em>Got a question about the universe? Ask here. Someone probably knows the answer. It might even be 42.</em></p>
+            <hr>
+
+            {% if user.is_authenticated %}
+            <a href="{% url 'create_question' %}" class="btn mb-4">Ask a Question</a>
+            {% else %}
+            <p class="mb-4">Please <a href="{% url 'login' %}">log in</a> to ask a question.</p>
+            {% endif %}
+
+            {% for question in questions %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h2 class="h5">
+                        <a href="{% url 'question_detail' question.id %}">
+                            {{ question.question }}
+                        </a>
+                    </h2>
+                    <small class="text-muted">
+                        Asked by {{ question.created_by }} on {{ question.created_at|date:"d M Y" }} 
+                        . {{ question.answers.count }} answers {{ question.answers.count|pluralize }}
+                    </small>
+                    {% if user == question.created_by %}
+                    <a href="{% url 'edit_question' question.id %}" class="btn btn-sm">Edit</a>
+                    <a href="{% url 'delete_question' question.id %}" class="btn btn-sm">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <p>No questions have been asked yet. Be the first to ask!</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
