@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container mt-4">
+<div class="container my-4">
     <div class="row justify-content-center">
         <div class="col-12 col-md-8">
             <h1>The Galactic Forum</h1>
@@ -24,11 +24,12 @@
                         </a>
                     </h2>
                     <small class="text-muted">
-                        Asked by {{ question.created_by }} on {{ question.created_at|date:"d M Y" }} 
-                        . {{ question.answers.count }} answers {{ question.answers.count|pluralize }}
+                        Asked by {{ question.created_by }} on {{ question.created_at|date:"d M Y" }}.
+                        {{ question.answers.count }} answers.
                     </small>
+                    <br>
                     {% if user == question.created_by %}
-                    <a href="{% url 'edit_question' question.id %}" class="btn btn-sm btn-outline-light">Edit</a>
+                    <a href="{% url 'edit_question' question.id %}" class="btn btn-sm btn-outline-dark">Edit</a>
                     <a href="{% url 'delete_question' question.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
                     {% endif %}
                 </div>

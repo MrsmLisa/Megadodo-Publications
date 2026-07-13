@@ -11,7 +11,7 @@
             <p class="text-muted">This will also delete all answers to this question.</p>
             <form method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-outline-danger">Delete Question</button>
+                <button type="submit" class="btn btn-danger">Delete Question</button>
                 <a href="{% url 'forum' %}" class="btn btn-outline-light ms-2">Cancel</a>
             </form>
         </div>
