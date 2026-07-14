@@ -11,7 +11,11 @@
         <div class="col-12 col-md-8">
             <h1>Thank You!</h1>
             <p>Your order has been received and is being processed. Don't panic - everything is under control.</p>
-            <p>You can view your order history in your profile.</p>
+            {% if user.is_authenticated %}
+                <p>You can view your order history in your profile.</p>
+            {% else %}
+                <p>If you created an account during checkout, you can log in to view your order history.</p>
+            {% endif %}
 
             <div class="card mt-4">
                 <div class="card-body">
@@ -81,9 +85,9 @@
     </div>
     <div class="mt-4 text-center">
         {% if from_profile %}
-            <a href="{% url 'profile' %}" class="btn mt-3">Back to Profile</a>
+            <a href="{% url 'profile' %}" class="btn btn-outline-light mt-3">Back to Profile</a>
         {% else %}
-            <a href="{% url 'product_list' %}" class="btn mt-3">Keep Shopping</a>
+            <a href="{% url 'product_list' %}" class="btn btn-outline-light mt-3">Keep Shopping</a>
         {% endif %}
     </div>
 </div>

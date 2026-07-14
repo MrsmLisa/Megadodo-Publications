@@ -9,7 +9,7 @@ html {
 body {
     font-family: 'Cantarell', sans-serif;
     color: white;
-    background-color: #192242;
+    background-color: #121933;
     min-height: 100vh;
     margin: 0;
     display: grid;
@@ -181,11 +181,45 @@ main {
 /* bag page */
 
 .table {
-    --bs-table-striped-bg: #121932;
+    --bs-table-striped-bg: #121933;
     --bs-table-color: #fff;
     --bs-table-border-color: #fff;
 }
 
 td, th{
-    --bs-table-bg: #121932;
+    --bs-table-bg: #121933;
+}
+
+/* Formgroup */
+
+.card .form-group label,
+.card p label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: black;
+}
+
+.card p input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.form-check-input {
+    margin: 0;
+}
+
+.form-check-label {
+    margin: 0;
 }

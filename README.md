@@ -194,7 +194,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 - **Wishlist**: Enable users to save products to a personal wishlist for future purchases.
 - **Discount Codes**: Allow admin to create discount codes for promotions.
 - **Extended Product Details**: Add genre, publisher and ISBN fields to product detail pages.
-- **Newsletter**: Connect the footer newsletter signup to a real email marketing service such as Mailchimp.
+- **Newsletter**: Make a newsletter signup to a real email marketing service such as Mailchimp.
 - **PurgeCSS**: Remove unused Bootstrap CSS to improve Lighthouse performance scores.
 
 ## Tools & Technologies
@@ -220,7 +220,7 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 | [![badge](https://img.shields.io/badge/Mermaid-grey?logo=mermaid&logoColor=FF3670)](https://mermaid.live) | Generate an interactive ERD diagram. |
 | [![badge](https://img.shields.io/badge/Balsamiq-grey?logo=balsamiq&logoColor=CC0100)](https://balsamiq.com) | Creating wireframes. |
 | [![badge](https://img.shields.io/badge/Claude-grey?logo=claude&logoColor=D97757)](https://claude.ai) | Help with debugging, troubleshooting and explaining concepts. |
-| [![badge](https://img.shields.io/badge/Copilot-grey?logo=githubcopilot&logoColor=000000)](https://github.com/copilot) | Code autocompletion during development. |
+| [![badge](https://img.shields.io/badge/Copilot-grey?logo=githubcopilot&logoColor=000000)](https://github.com/copilot) | Made all the images. |
 
 ## Database Design
 
@@ -529,7 +529,8 @@ There are no remaining major differences between the local version when compared
 
 ### Acknowledgements
 
-- I would like to thank my Code Institute mentor for the support and guidance throughout the development of this project.
+- I would like to thank my Code Institute mentor Tim Nelson for the support and guidance throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) Tutor Team for their assistance with troubleshooting and debugging project issues.
-- I would like to thank my husband for his patience, support and willingness to test the site repeatedly throughout development.
+- I would like to thank Jessica Fransson Duffy and Fahim for the testing.
+- I would like to thank my husband and son for his patience and support.
 - I would like to thank Douglas Adams for writing The Hitchhiker's Guide to the Galaxy, without which this project would have been considerably less fun to build. Don't Panic.
