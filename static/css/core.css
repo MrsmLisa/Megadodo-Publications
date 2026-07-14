@@ -164,6 +164,16 @@ td, th{
     --bs-table-bg: #121933;
 }
 
+/* Login and logout pages */
+
+#id_login, #id_password {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
 /* Formgroup */
 
 .card .form-group label,
