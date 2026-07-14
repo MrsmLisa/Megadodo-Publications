@@ -77,6 +77,7 @@ main {
     top: 90px;
     right: 20px;
     z-index: 1050;
+    border-radius: 5px;
 }
 
 .custom-toast {
@@ -85,33 +86,6 @@ main {
 
 .toast-capper {
     height: 2px;
-}
-
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid;
-    position: absolute;
-    top: -10px;
-    right: 36px;
-}
-
-.arrow-success {
-    border-bottom : 10px solid #28a745;
-}
-
-.arrow-danger {
-    border-bottom : 10px solid #dc3545;
-}
-
-.arrow-warning {
-    border-bottom : 10px solid #ffc107;
-}
-
-.arrow-info {
-    border-bottom : 10px solid #17a2b8;
 }
 
 /* Footer */
@@ -188,6 +162,16 @@ main {
 
 td, th{
     --bs-table-bg: #121933;
+}
+
+/* Login and logout pages */
+
+#id_login, #id_password {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-top: 4px;
 }
 
 /* Formgroup */
