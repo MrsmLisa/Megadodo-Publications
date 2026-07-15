@@ -1,5 +1,5 @@
-from cProfile import label
 
+from PIL.ImtImagePlugin import field
 from django import forms
 from .models import Order
 from django_countries.fields import CountryField
@@ -32,9 +32,7 @@ class OrderForm(forms.ModelForm):
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field in placeholders:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+                placeholder = f'{placeholders[field]} *' if self.fields[field].required else placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'form-control mb-3'
             self.fields[field].label = False
