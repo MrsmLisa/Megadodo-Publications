@@ -40,40 +40,39 @@
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/mdpw.webp' %}" alt="Megadodo Publications Logo" class="logo" height="60">
             </a>
-            <ul class="d-flex align-items-center ms-auto order-lg-last">
-                <!-- User dropdown -->
-                <li class="nav-item dropdown list-unstyled">
-                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-circle-user"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li>
-                        {% if request.user.is_authenticated %}
-                            <li><a class="dropdown-item" href="{% url 'profile' %}">My Account</a></li>
-                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign out</a></li>
-                            {% if request.user.is_superuser %}
-                                <li><a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a></li>
-                            {% endif %}
-                        {% else %}
-                            <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign in</a></li>
-                            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign up</a></li>
-                        {% endif %}
-                        </li>
-                    </ul>
-                </li>
-
-                <!-- Shopping cart -->
-                <a class="shopping-cart-link nav-link" href="{% url 'view_bag' %}" role="button">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                    <span class="cart-count">
-                        {% if grand_total %}
-                            €{{ grand_total|floatformat:2 }}
-                        {% else %}
-                            €0.00
-                        {% endif %}
-                    </span>
-                </a>
-            </ul>
+            <ul class="d-flex align-items-center ms-auto order-lg-last list-unstyled mb-0">
+    <!-- User dropdown -->
+    <li class="nav-item dropdown">
+        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-circle-user"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+            {% if request.user.is_authenticated %}
+                <li><a class="dropdown-item" href="{% url 'profile' %}">My Account</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                {% if request.user.is_superuser %}
+                    <li><a class="dropdown-item" href="/admin/">Admin</a></li>
+                {% endif %}
+            {% else %}
+                <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign In</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </li>
+    <!-- Shopping cart -->
+    <li class="nav-item">
+        <a class="shopping-cart-link nav-link" href="{% url 'view_bag' %}">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <span class="cart-count">
+                {% if grand_total %}
+                    €{{ grand_total|floatformat:2 }}
+                {% else %}
+                    €0.00
+                {% endif %}
+            </span>
+        </a>
+    </li>
+</ul>
 
             <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
