@@ -40,7 +40,7 @@
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/mdpw.webp' %}" alt="Megadodo Publications Logo" class="logo" height="60">
             </a>
-            <div class="d-flex align-items-center ms-auto order-lg-last">
+            <ul class="d-flex align-items-center ms-auto order-lg-last">
                 <!-- User dropdown -->
                 <li class="nav-item dropdown list-unstyled">
                     <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,7 +71,7 @@
                         {% endif %}
                     </span>
                 </a>
-            </div>
+            </ul>
 
             <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,8 +133,6 @@
 
     <!-- Main content -->
     <main>
-    
-
     {% block content %}
     {% endblock content %}
     </main>
@@ -146,7 +144,7 @@
 
             <!-- Social media -->
             <div class="col-12 col-md-4 text-center mb-3">
-                <h5>Follow Us on Earth</h5>
+                <h3 class="h5">Follow Us on Earth</h3>
                 <a href="https://www.facebook.com/" class="footer-link me-3" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook fa-xl"></i></a>
                 <a href="https://www.instagram.com/" class="footer-link me-3" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram fa-xl"></i></a>
                 <a href="https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy_(fictional)" class="footer-link me-3" aria-label="Wikipedia" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-wikipedia-w fa-xl"></i></a>
@@ -154,7 +152,7 @@
 
             <!-- Links for information -->
             <div class="col-12 col-md-4 text-center mb-3">
-                <h5>Information</h5>
+                <h3 class="h5">Information</h3>
                 <ul class="list-unstyled">
                 <li><a href="{% url 'terms' %}" class="footer-link">Terms and Conditions</a></li>
                 <li><a href="{% url 'delivery' %}" class="footer-link">Delivery Policy</a></li>
@@ -164,7 +162,7 @@
 
             <!-- Links for developer -->
             <div class="col-12 col-md-4 text-center mb-3">
-                <h5>Developer</h5>
+                <h3 class="h5">Developer</h3>
                 <a href="https://www.linkedin.com/in/lisa-scott-025211142/" class="footer-link me-3" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-linkedin fa-xl"></i>
                 </a>
