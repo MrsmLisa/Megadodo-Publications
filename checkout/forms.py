@@ -1,3 +1,5 @@
+from cProfile import label
+
 from django import forms
 from .models import Order
 from django_countries.fields import CountryField
@@ -10,7 +12,9 @@ class OrderForm(forms.ModelForm):
                 'country', 'postcode', 'town_or_city', 
                 'street_address1', 'street_address2')
         widgets = {
-            'country': CountrySelectWidget()
+            'country': CountrySelectWidget(attrs={
+                'class': 'form-control mb-3',
+                'aria-label': 'Country',})
         }
 
     def __init__(self, *args, **kwargs):
@@ -19,7 +23,6 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'country': 'Country',
             'postcode': 'Postal Code',
             'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
