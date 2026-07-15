@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="row text-center">
-        <p class="banner" href="#">FREE DELIVERY ON ORDERS OVER €{{ free_delivery_threshold }}</p>
+        <p class="banner">FREE DELIVERY ON ORDERS OVER €{{ free_delivery_threshold }}</p>
     </div>
 
 <div class="container mt-4 mb-5" style="max-width: 800px;">
@@ -27,7 +27,7 @@
                         <p>By {{ product.author }}</p>
                     {% endif %}
                     <h2>€ {{ product.price }}</h2>
-                    <p>{{ product.description|safe }}</p>
+                    <p class="product-description">{{ product.description|safe }}</p>
 
                     <!-- Add to Bag form -->
                     <form method="post" action="{% url 'add_to_bag' product.id %}">

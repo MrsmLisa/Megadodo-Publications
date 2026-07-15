@@ -159,6 +159,12 @@ main {
     padding: 10px;
 }
 
+/* Product detail page */
+
+.product-description * {
+    color: inherit !important;
+}
+
 /* bag page */
 
 .table {

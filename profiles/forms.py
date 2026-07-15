@@ -15,7 +15,6 @@ class UserProfileForm(forms.ModelForm):
             'default_street_address2': 'Street Address 2',
             'default_postcode': 'Postcode',
             'default_town_or_city': 'Town or City',
-            'default_country': 'Country',
         }
 
         for field in self.fields:
