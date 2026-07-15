@@ -11,7 +11,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| bag | [bag.html](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/templates/bag/bag.html) | [Link](https://validator.w3.org/nu/?doc=https://megadodo-publications-8e99ae98d78e.herokuapp.com/bag/) | ![screenshot](documentation/validation/html-bag-bag.png) | |
+| bag | [bag.html](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/templates/bag/bag.html) | [Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmegadodo-publications-8e99ae98d78e.herokuapp.com%2Fbag%2F) | ![screenshot](documentation/validation/html-bag-bag.png) | |
 | checkout | [checkout.html](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/checkout/templates/checkout/checkout.html) | [Link](https://validator.w3.org/nu/?doc=https://megadodo-publications-8e99ae98d78e.herokuapp.com/checkout/) | ![screenshot](documentation/validation/html-checkout-checkout.png) | |
 | checkout | [checkout_success.html](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/checkout/templates/checkout/checkout_success.html) | View Page Source | ![screenshot](documentation/validation/html-checkout-checkout_success.png) | Requires login — validated via page source |
 | contact | [contact.html](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/contact/templates/contact/contact.html) | [Link](https://validator.w3.org/nu/?doc=https://megadodo-publications-8e99ae98d78e.herokuapp.com/contact/) | ![screenshot](documentation/validation/html-contact-contact.png) | |
