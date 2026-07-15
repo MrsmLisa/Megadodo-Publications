@@ -12,7 +12,7 @@
             {% if user.is_authenticated %}
             <a href="{% url 'create_question' %}" class="btn btn-outline-light mb-4">Ask a Question</a>
             {% else %}
-            <p class="mb-4">Please <a href="{% url 'account_login' %}">log in</a> to ask a question.</p>
+            <p class="mb-4">Please <a href="{% url 'account_login' %}?next={{ request.path }}" class="text-white">Sign in</a> to ask a question.</p>
             {% endif %}
 
             {% for question in questions %}
