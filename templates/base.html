@@ -47,6 +47,7 @@
                         <i class="fa-solid fa-circle-user"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
                         {% if request.user.is_authenticated %}
                             <li><a class="dropdown-item" href="{% url 'profile' %}">My Account</a></li>
                             <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign out</a></li>
@@ -57,6 +58,7 @@
                             <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign in</a></li>
                             <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign up</a></li>
                         {% endif %}
+                        </li>
                     </ul>
                 </li>
 
