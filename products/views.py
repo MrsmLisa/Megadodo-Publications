@@ -12,7 +12,6 @@ from contact.models import Contact
 
 # Create your views here.
 
-
 class ProductListView(ListView):
     model = Product
     template_name = 'products/product_list.html'

@@ -91,10 +91,9 @@ source: [Megadodo-Publications amiresponsive](https://ui.dev/amiresponsive?url=h
 
 The site uses a strict black and dark navy colour scheme inspired by classic science fiction and the iconic style of the Hitchhiker's Guide itself. The high contrast palette keeps the focus firmly on the product images and content, letting the book covers and merchandise provide the colour.
 
-- `#0d1117` — dark navy background
+- `#121933` — dark navy background
 - `#ffffff` — white text and card backgrounds
-- `#000000` — black navbar and footer
-- `#ffc107` — Bootstrap warning yellow for delivery messages
+- `#0d111f` — dark navy navbar and footer
 
 ![screenshot](documentation/coolors.png)
 
@@ -184,7 +183,6 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 | Terms and Conditions | Legal terms written in the style of the Hitchhiker's Guide universe. | ![screenshot](documentation/features/terms.png) |
 | Footer | Footer with social media links, developer GitHub and LinkedIn links, and site information links. | ![screenshot](documentation/features/footer.png) |
 | 404 Page | Custom 404 error page themed around the Hitchhiker's Guide universe. | ![screenshot](documentation/features/404.png) |
-| 500 Page | Custom 500 error page themed around the Hitchhiker's Guide universe. | ![screenshot](documentation/features/500.png) |
 | Admin Panel | Full Django admin panel for managing products, orders, users, contact messages and forum content. | ![screenshot](documentation/features/admin.png) |
 
 ### Future Features
