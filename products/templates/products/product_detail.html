@@ -27,7 +27,7 @@
                         <p>By {{ product.author }}</p>
                     {% endif %}
                     <h2>€ {{ product.price }}</h2>
-                    <p class="product-description">{{ product.description|safe }}</p>
+                    <div class="product-description">{{ product.description|safe }}</div>
 
                     <!-- Add to Bag form -->
                     <form method="post" action="{% url 'add_to_bag' product.id %}">
