@@ -55,7 +55,7 @@ Add the following to the top of each JS file before validating:
 | Directory | File | Screenshot | Notes |
 | --- | --- | --- | --- |
 | static | [base.js](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/static/js/base.js) | ![screenshot](documentation/validation/js-static-base.png) | |
-| checkout | [stripe_elements.js](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/checkout/static/checkout/js/stripe_elements.js) | ![screenshot](documentation/validation/js-checkout-stripe_elements.png) | `Stripe` and `$` flagged as undefined — expected when using external Stripe and jQuery libraries |
+| checkout | [stripe_elements.js](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/checkout/static/checkout/js/stripe_elements.js) | ![screenshot](documentation/validation/js-checkout-stripe_elements.png) | `Stripe`is flagged as undefined — expected when using external Stripe and jQuery libraries |
 
 ### Python
 
@@ -63,10 +63,10 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| bag | [admin.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/main/bag/admin.py) | ![screenshot](documentation/validation/py-bag-admin.png) | |
-| bag | [contexts.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/contexts.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/main/bag/contexts.py) | ![screenshot](documentation/validation/py-bag-contexts.png) | |
-| bag | [urls.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/main/bag/urls.py) | ![screenshot](documentation/validation/py-bag-urls.png) | |
-| bag | [views.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/main/bag/views.py) | ![screenshot](documentation/validation/py-bag-views.png) | |
+| bag | [admin.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/refs/heads/main/bag/admin.py) | ![screenshot](documentation/validation/py-bag-admin.png) | |
+| bag | [contexts.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/contexts.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/refs/heads/main/bag/contexts.py) | ![screenshot](documentation/validation/py-bag-contexts.png) | |
+| bag | [urls.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/refs/heads/main/bag/urls.py) | ![screenshot](documentation/validation/py-bag-urls.png) | |
+| bag | [views.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/bag/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/refs/heads/main/bag/views.py) | ![screenshot](documentation/validation/py-bag-views.png) | |
 | checkout | [admin.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/checkout/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/main/checkout/admin.py) | ![screenshot](documentation/validation/py-checkout-admin.png) | |
 | checkout | [forms.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/checkout/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/main/checkout/forms.py) | ![screenshot](documentation/validation/py-checkout-forms.png) | |
 | checkout | [models.py](https://github.com/MrsmLisa/Megadodo-Publications/blob/main/checkout/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/MrsmLisa/Megadodo-Publications/main/checkout/models.py) | ![screenshot](documentation/validation/py-checkout-models.png) | |

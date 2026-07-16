@@ -3,6 +3,7 @@ from decimal import Decimal
 from django.conf import settings
 from products.models import Product
 
+
 def bag_contents(request):
     bag_items = []
     total = 0
@@ -26,7 +27,7 @@ def bag_contents(request):
         delivery = Decimal('0.00')  # No delivery charge for an empty bag
         free_delivery_delta = 0
     elif total >= free_delivery_threshold:
-        delivery = Decimal('0.00')  # Free delivery for orders above the threshold
+        delivery = Decimal('0.00')
         free_delivery_delta = 0
     else:
         delivery = Decimal('4.99')  # Flat rate delivery charge
@@ -42,6 +43,6 @@ def bag_contents(request):
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': free_delivery_threshold,
         'grand_total': grand_total,
-    }    
-    
+    }
+
     return context
