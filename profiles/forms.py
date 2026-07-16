@@ -19,7 +19,7 @@ class UserProfileForm(forms.ModelForm):
 
         for field in self.fields:
             if field in placeholders:
-                self.fields[field].widget.attrs['placeholder'] =
-                placeholders[field]
+                self.fields[field].widget.attrs[
+                    'placeholder'] = placeholders[field]
             self.fields[field].widget.attrs['class'] = 'form-control mb-3'
             self.fields[field].label = False

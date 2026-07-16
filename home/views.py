@@ -23,10 +23,10 @@ def delivery(request):
 
 def index(request):
     try:
-        hitchhikers =
-        Product.objects.get(name='The Hitchhikers Guide to the Galaxy')
-        fifty_threes =
-        Product.objects.get(name='53 More Things To Do in Zero Gravity')
+        hitchhikers = Product.objects.get(
+            name='The Hitchhikers Guide to the Galaxy')
+        fifty_threes = Product.objects.get(
+            name='53 More Things To Do in Zero Gravity')
     except Product.DoesNotExist:
         hitchhikers = None
         fifty_threes = None

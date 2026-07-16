@@ -2,6 +2,7 @@
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
 */
+/* jshint esversion: 11, jquery: true */
 
 var stripePublicKey = $('#stripe-public-key').text().slice(1, -1);
 var clientSecret = $('#client-secret').text().slice(1, -1);

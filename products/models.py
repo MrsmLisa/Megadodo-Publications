@@ -21,8 +21,8 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = CloudinaryField('image', null=True, blank=True)
-    category = models.ForeignKey
-    (Category, on_delete=models.CASCADE, related_name='books')
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name='books')
     sku = models.CharField(max_length=50, unique=True)
 
     def product_url(self):

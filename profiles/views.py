@@ -24,8 +24,8 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
-    contacts = Contact.
-    objects.filter(email=request.user.email).order_by('-created_at')
+    contacts = Contact.objects.filter(
+        email=request.user.email).order_by('-created_at')
     template = 'profiles/profile.html'
     context = {
         'form': form,

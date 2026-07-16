@@ -35,7 +35,10 @@ class OrderForm(forms.ModelForm):
         for field in self.fields:
             if field in placeholders:
                 placeholder = f'{placeholders[field]} *'
-                if self.fields[field].required else placeholders[field]
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'form-control mb-3'
             self.fields[field].label = False
