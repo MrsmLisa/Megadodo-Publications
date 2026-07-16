@@ -8,6 +8,7 @@ from contact.models import Contact
 
 # Create your views here.
 
+
 @login_required
 def profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -18,11 +19,13 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request,
+                           'Update failed. Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
-    contacts = Contact.objects.filter(email=request.user.email).order_by('-created_at')
+    contacts = Contact.
+    objects.filter(email=request.user.email).order_by('-created_at')
     template = 'profiles/profile.html'
     context = {
         'form': form,

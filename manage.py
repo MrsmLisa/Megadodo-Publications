@@ -6,7 +6,8 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'megadodo_publications.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE',
+                          'megadodo_publications.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

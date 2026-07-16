@@ -12,6 +12,7 @@ from contact.models import Contact
 
 # Create your views here.
 
+
 class ProductListView(ListView):
     model = Product
     template_name = 'products/product_list.html'
@@ -23,19 +24,19 @@ class ProductListView(ListView):
         query = self.request.GET.get('q')
         if query:
             queryset = queryset.filter(
-                Q(name__icontains=query) | 
+                Q(name__icontains=query) |
                 Q(description__icontains=query) |
                 Q(author__icontains=query)
             )
         return queryset
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['search_term'] = self.request.GET.get('q', '')
         return context
-    
+
 
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    return render(request, 'products/product_detail.html', {'product' : product})
-
+    return render(request,
+                  'products/product_detail.html', {'product': product})
