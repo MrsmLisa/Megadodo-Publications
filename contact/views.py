@@ -12,7 +12,8 @@ def contact_create(request):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
 
-        contact = Contact(name=name, email=email, subject=subject, message=message)
+        contact = Contact
+        (name=name, email=email, subject=subject, message=message)
         contact.save()
 
         return render(request, 'contact/thank_you.html', {'name': name})

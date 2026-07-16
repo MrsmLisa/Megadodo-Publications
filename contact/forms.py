@@ -1,6 +1,7 @@
 from django import forms
 from .models import Contact
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
@@ -10,4 +11,3 @@ class ContactForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
-

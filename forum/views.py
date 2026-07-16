@@ -5,15 +5,17 @@ from django.contrib import messages
 
 # Create your views here.
 
+
 def forum(request):
     questions = Question.objects.all()
     return render(request, 'forum/forum.html', {'questions': questions})
+
 
 def question_detail(request, question_id):
     question = get_object_or_404(Question, id=question_id)
     answers = question.answers.all()
     return render(request, 'forum/question_detail.html', {
-        'question': question, 
+        'question': question,
         'answers': answers
     })
 
@@ -23,7 +25,7 @@ def create_question(request):
     if request.method == 'POST':
         question_text = request.POST.get('question')
         Question.objects.create(
-            question=question_text, 
+            question=question_text,
             created_by=request.user
         )
         messages.success(request, 'Your question has been posted.')
@@ -56,7 +58,8 @@ def delete_question(request, question_id):
         question.delete()
         messages.success(request, 'Your question has been deleted.')
         return redirect('forum')
-    return render(request, 'forum/delete_question.html', {'question': question})
+    return render(request, 'forum/delete_question.html',
+                  {'question': question})
 
 
 @login_required
@@ -65,8 +68,8 @@ def create_answer(request, question_id):
     if request.method == 'POST':
         answer_text = request.POST.get('answer')
         Answer.objects.create(
-            question=question, 
-            answer=answer_text, 
+            question=question,
+            answer=answer_text,
             created_by=request.user
         )
         messages.success(request, 'Your answer has been posted.')
