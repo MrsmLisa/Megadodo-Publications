@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import UserProfile
@@ -39,18 +39,12 @@ def profile(request):
 
 @login_required
 def order_history(request, order_number):
-    """
-    Display the user's order history
-    """
     order = get_object_or_404(Order, order_number=order_number)
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
-        'A confirmation email was sent on the order date.'
-    ))
-    template = 'checkout/checkout_success.html'
-    context = {
+    if order.user_profile and order.user_profile.user != request.user:
+        messages.error(request, 'You do not have permission to view this order.')
+        return redirect('profile')
+    messages.info(request, f'This is a past confirmation for order {order_number}.')
+    return render(request, 'checkout/checkout_success.html', {
         'order': order,
         'from_profile': True,
-    }
-
-    return render(request, template, context)
+    })
