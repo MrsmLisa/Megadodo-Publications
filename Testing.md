@@ -140,7 +140,8 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Lighthouse Audit
 
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, particularly the unused CSS warning from Bootstrap which is a known issue with using CDN-hosted CSS frameworks.
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, particularly the unused CSS warning from Bootstrap which is a known issue with using CDN-hosted CSS frameworks and Best Practices score affected by third-party cookies from 
+Stripe, Cloudinary and Font Awesome.
 
 | Page | Mobile | Desktop |
 | --- | --- | --- |
