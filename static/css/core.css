@@ -228,6 +228,6 @@ td, th{
 
 #card-errors {
     color: white;
-    text-decoration: underline;
+    font-size:large;
     padding: 5px 0;
 }
