@@ -157,7 +157,7 @@ def checkout_success(request, order_number):
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. \
-        You can view your order history in your profile.')
+        If you are logged in, you can view your order history in your profile.')
 
     if 'bag' in request.session:
         del request.session['bag']
