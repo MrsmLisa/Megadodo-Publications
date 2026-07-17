@@ -24,6 +24,11 @@ class Product(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name='books')
     sku = models.CharField(max_length=50, unique=True)
+    class Meta:
+        ordering = ['name']
 
     def product_url(self):
         return reverse('product_detail', kwargs={'pk': str(self.id)})
+
+    def __str__(self):
+        return self.name
