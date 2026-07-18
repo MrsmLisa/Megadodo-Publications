@@ -529,6 +529,6 @@ There are no remaining major differences between the local version when compared
 
 - I would like to thank my Code Institute mentor Tim Nelson for the support and guidance throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) Tutor Team for their assistance with troubleshooting and debugging project issues.
-- I would like to thank Jessica Fransson Duffy and Fahim for the testing.
+- I would like to thank Stephen and Jessica Fransson Duffy, and Fahim for the testing.
 - I would like to thank my husband and son for his patience and support.
 - I would like to thank Douglas Adams for writing The Hitchhiker's Guide to the Galaxy, without which this project would have been considerably less fun to build. Don't Panic.
